@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Notification from './components/Notification';
 import Options from './components/Options';
 import VideoPlayer from './components/VideoPlayer';
+import Dictionary from './components/Dictionary';
 /* TODO: CSS must be moved in App.css */
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -44,6 +45,7 @@ function App() {
       <Options>
         <Notification />
       </Options>
+      <Dictionary />
     </div>
   );
 }

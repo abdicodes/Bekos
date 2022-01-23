@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Assignment, Phone, PhoneDisabled } from '@material-ui/icons'
 import { SocketContext } from '../SocketContext';
-
+/* TODO: CSS must be moved in Options.css */
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',

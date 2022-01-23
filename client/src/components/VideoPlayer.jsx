@@ -3,7 +3,7 @@ import { Grid, Typography, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { SocketContext } from '../SocketContext';
-
+/* TODO: CSS must be moved in VideoPlayer.css */
 const useStyles = makeStyles((theme) => ({
     video: {
       width: '550px',

@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Notification from './components/Notification';
 import Options from './components/Options';
 import VideoPlayer from './components/VideoPlayer';
-
+/* TODO: CSS must be moved in App.css */
 const useStyles = makeStyles((theme) => ({
   appBar: {
     borderRadius: 15,

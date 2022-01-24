@@ -91,7 +91,22 @@ Some notes:
 ### Notes
 The GUI currently developed is just to showcase the video stream running, and must be changed. The files `/client/src/App.js, /client/src/App.css, /client/src/index.js, /client/src/index.css` are responsible for the presentation of the webpage. The components `/client/src/components/Notification.jsx, /client/src/components/Options.jsx, /client/src/components/VideoPlayer.jsx` are responsible for the presentation of the specific component.
 
-### TODO:
+## Dictionary
+
+### Folder structure
+All the code for the dictionary is in `client/src/components/Dictionary.jsx`. In `App.js` I just add the component.
+
+### Usage
+- add the language in the language field, as 2 lowercase letters (e.g. Italian : it, English: en, German : de).
+- Add a word in the dedicated field.
+- Definition should appear in the lower box. More data are available, may be implemented in the future.
+
+### Notes
+- The dictionary shows the definition of the word in the same language of the word. This may cause problems to a learner? But implementing cross-translation may be to complicated, could be a task for the future.
+## TODO:
 - Ensure if we need `package.json` and `.gitignore` in both root folder and /client folder
 - Remove files and folders not needed (mainly, in /client/src)
+- There are some problem with the alignment of the sections. Abdi, I trust you on this!
+- The dictionary accepts a language as 2 lowercase letters. Write function to allow full language or uppercase letters.
+- The overall structure of the code must be reviewed. i.e., all the code is smashed together for no reason at all.
 

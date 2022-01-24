@@ -94,4 +94,7 @@ The GUI currently developed is just to showcase the video stream running, and mu
 ### TODO:
 - Ensure if we need `package.json` and `.gitignore` in both root folder and /client folder
 - Remove files and folders not needed (mainly, in /client/src)
+- There are some problem with the alignment of the sections. Abdi, I trust you on this!
+- The dictionary accepts a language as 2 lowercase letters. Write function to allow full language or uppercase letters.
+- The overall structure of the code must be reviewed. i.e., all the code is smashed together for no reason at all.
 

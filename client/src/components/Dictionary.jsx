@@ -35,18 +35,32 @@ const useStyles = makeStyles((theme) => ({
 
 const Dictionary = () => {
     const [wordToSearch, setWordToSearch] = useState('');
+    const [lang, setLang] = useState('');
+    const [definition, setDefinition] = useState('');
     const classes = useStyles();
 
   return (
   <Container className={classes.container}>
       <Paper elevation={10} className={classes.paper}>
           <form className={classes.root} noValidate autoComplete='off'>
-              <Grid item xs={12} md={6} className={classes.padding}>
+          <Grid item xs={6} md={12} className={classes.padding}>
                   <Typography gutterBottom variant="h6">Dictionary</Typography>
+                  <TextField label="Language (2 letters)" value={lang} onChange={(e) => setLang(e.target.value)} fullwidth/>
+              </Grid>
+          <Grid item xs={6} md={12} className={classes.padding}>
                   <TextField label="Word to search..." value={wordToSearch} onChange={(e) => setWordToSearch(e.target.value)} fullwidth/>
-                    <Button variant="contained" color="primary" fullwidth onClick={(e) => fetchWord()}>
+                    <Button variant="contained" color="primary" fullwidth onClick={(e) => fetchWord(lang, wordToSearch, setDefinition)}>
                         Search Word
                     </Button>
+              </Grid>
+              <Grid item xs={30} md={30} className={classes.padding}>
+              <TextField
+                id="outlined-multiline-static"
+                label="Definition"
+                multiline
+                rows={20}
+                defaultValue={definition}
+        />
               </Grid>
           </form>
       </Paper>
@@ -54,12 +68,22 @@ const Dictionary = () => {
   )
 };
 
-const fetchWord = async () => {
+const fetchWord = async (lang, word, func) => {
     // Where we're fetching data from
+    const url = `https://api.dictionaryapi.dev/api/v2/entries/${lang}/${word}`;
     try {
-        const response = await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/hello");
+        const response = await fetch(url);
         const data = await response.json();
-        return console.log(data);
+        const payload = data[0];
+        console.log(payload);
+        const result = `
+Word: ${payload.word}
+Phonetic: ${payload.phonetic}
+Origin: ${payload.origin}
+Definition: ${payload.meanings[0].definitions[0].definition}
+        `;
+        console.log(result);
+        return func(result);
     } catch (error) {
         return console.error(error);
     }}

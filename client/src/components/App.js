@@ -27,7 +27,7 @@ function App() {
                   path="/update-profile"
                   component={UpdateProfile}
                 />
-                <PrivateRoute path="/video" component={VideoApi} />
+                <Route path="/video" component={VideoApi} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/login" component={Login} />
                 <Route path="/forgot-password" component={ForgotPassword} />
